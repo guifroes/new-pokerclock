@@ -1,4 +1,6 @@
 .DS_Store
 .*.s[a-w][a-z]
 
-node-modules
+node_modules
+.sass-cache/
+.tmp/
