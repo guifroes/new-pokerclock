@@ -8,6 +8,7 @@ angular.module('newPokerclockApp')
 
     $scope.gameName = 'My awesome poker game';
     $scope.gameStarted = true;
+    $scope.levels = [];
 
     var counter = 333;
     $scope.onTimeout = function(){

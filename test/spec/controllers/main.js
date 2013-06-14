@@ -20,5 +20,9 @@ describe('Controller: MainCtrl', function () {
     expect(scope.gameName).toBe('My awesome poker game');
   });
 
+  it('should have levels', function() {
+    expect(scope.levels).toBeDefined();
+  })
+
 
 });
