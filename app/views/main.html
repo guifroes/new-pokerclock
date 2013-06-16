@@ -1,8 +1,17 @@
 <div class="hero-unit">
-  <h1>{{gameName}}</h1>
-  <h1>{{time | date: 'hh:mm:ss' }}</h1>
-  <span>{{gameStarted}}</span>
-  <p>
-    <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>Button madafaca</button>
+  <div class='gameName'>
+    <h1>{{gameName}}</h1>
+  </div>
+  <p class='time'>
+    <span>{{time | date: 'hh:mm:ss' }}</span>
   </p>
+  <p class='buttonBar'>
+    <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>{{buttonCaption}}</button>
+  </p>
+  <ul>
+    <div ng-repeat='level in levels'>
+      <span>Level: {{level.number}}</span>
+      <span>Blinds: {{level.blinds}}</span>
+    </div>
+  </ul>
 </div>

@@ -24,5 +24,32 @@ describe('Controller: MainCtrl', function () {
     expect(scope.levels).toBeDefined();
   })
 
+  it('should have levels number, blinds and time', function(){
+    expect(scope.levels[0].number).toBeDefined;
+    expect(scope.levels[0].blinds).toBeDefined;
+    expect(scope.levels[0].time).toBeDefined;
+  })
+
+  it('should change the button caption when clicked', function() {
+    expect(scope.buttonCaption).toBe('Start game');
+
+    scope.stop();
+
+    expect(scope.buttonCaption).toBe('Stop game');
+  })
+
+  it('should start at level 0', function() {
+    expect(scope.currentLevel.number).toBe(0);
+  })
+
+  it('should go to level 1 when first started', function() {
+    scope.stop();
+
+    expect(scope.currentLevel.number).toBe(1);
+    expect(scope.currentLevel.blinds).toBe('25/50');
+    expect(scope.currentLevel.time).toBe(750);
+  })
+
+
 
 });
