@@ -42,12 +42,17 @@ describe('Controller: MainCtrl', function () {
     expect(scope.currentLevel.number).toBe(0);
   })
 
+  it('should have initial time equal to first level time', function() {
+    expect(scope.time).toEqual(new Date(0, 0, 0, 0, 0, scope.levels[0].time, 0));
+  })
+
   it('should go to level 1 when first started', function() {
     scope.stop();
 
     expect(scope.currentLevel.number).toBe(1);
     expect(scope.currentLevel.blinds).toBe('25/50');
-    expect(scope.currentLevel.time).toBe(750);
+    expect(scope.currentLevel.time).toBe(900);
+    expect(scope.currentLevel.ante).toBe(0);
   })
 
 

@@ -3,8 +3,9 @@
     <h1>{{gameName}}</h1>
   </div>
   <p class='time'>
-    <span>{{time | date: 'hh:mm:ss' }}</span>
+    <span>{{time | date: 'mm:ss' }}</span>
   </p>
+  <h3>Level {{currentLevel.number}} | Blinds {{currentLevel.blinds}} | Ante {{currentLevel.ante}}</h3>
   <p class='buttonBar'>
     <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>{{buttonCaption}}</button>
   </p>
@@ -12,6 +13,7 @@
     <div ng-repeat='level in levels'>
       <span>Level: {{level.number}}</span>
       <span>Blinds: {{level.blinds}}</span>
+      <span>Ante: {{level.ante}}</span>
     </div>
   </ul>
 </div>

@@ -9,14 +9,16 @@ angular.module('newPokerclockApp')
     $scope.gameName = 'My awesome poker game';
     $scope.gameStarted = false;
     $scope.buttonCaption = 'Start game';
-    $scope.levels = [{number: 1, blinds: "25/50", time: 750},
-                    {number: 2, blinds: "50/75", time: 750},
-                    {number: 3, blinds: "75/100", time: 750},
-                    {number: 4, blinds: "100/200", time: 750}];
+    $scope.levels = [{number: 1, blinds: "25/50", time: 900, ante: 0},
+                    {number: 2, blinds: "50/75", time: 900, ante: 0},
+                    {number: 3, blinds: "75/100", time: 900, ante: 0},
+                    {number: 4, blinds: "100/200", time: 900, ante: 0}];
 
     $scope.currentLevel = {number: 0};
 
-    var counter = 333;
+    var counter = $scope.levels[0].time;
+    $scope.time = new Date(0, 0, 0, 0, 0, counter, 0);
+
     $scope.onTimeout = function(){
       counter--;
       $scope.time = new Date(0, 0, 0, 0, 0, counter, 0);
@@ -31,7 +33,6 @@ angular.module('newPokerclockApp')
 
     var getNextLevel = function() {
       var level = $scope.currentLevel;
-      console.log(level);
       return $scope.levels[level.number];
     }
 
