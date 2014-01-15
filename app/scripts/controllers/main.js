@@ -4,7 +4,7 @@ angular.module('newPokerclockApp')
   .controller('MainCtrl', function ($scope, $timeout) {
     var startTimer = function(){
       return $timeout($scope.onTimeout, 1000);
-    }
+    };
 
     $scope.gameName = 'My awesome poker game';
     $scope.gameStarted = false;
@@ -23,18 +23,18 @@ angular.module('newPokerclockApp')
       counter--;
       $scope.time = new Date(0, 0, 0, 0, 0, counter, 0);
       mytimeout = startTimer();
-    }
+    };
 
     var mytimeout;
 
     var stopTimer = function() {
       $timeout.cancel(mytimeout);
-    }
+    };
 
     var getNextLevel = function() {
       var level = $scope.currentLevel;
       return $scope.levels[level.number];
-    }
+    };
 
     $scope.stop = function() {
       if($scope.gameStarted) {
@@ -50,6 +50,9 @@ angular.module('newPokerclockApp')
         mytimeout = startTimer();
         $scope.buttonCaption = 'Stop game';
       }
-    }
-    
+    };
+
+    $scope.addLevel = function() {
+      $scope.levels.push({number: 5, blinds: "50/75", time: 900, ante: 0});
+    };
 });

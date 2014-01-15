@@ -8,6 +8,7 @@
   <h3>Level {{currentLevel.number}} | Blinds {{currentLevel.blinds}} | Ante {{currentLevel.ante}}</h3>
   <p class='buttonBar'>
     <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>{{buttonCaption}}</button>
+    <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
   </p>
   <ul>
     <div ng-repeat='level in levels'>

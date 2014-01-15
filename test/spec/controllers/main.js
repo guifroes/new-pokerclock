@@ -55,6 +55,15 @@ describe('Controller: MainCtrl', function () {
     expect(scope.currentLevel.ante).toBe(0);
   })
 
+  it('should add a level', function() {
+    var previousNumberOfLevels = scope.levels.length;
+
+    scope.addLevel();
+
+    var currentNumberOfLevels = scope.levels.length;
+
+    expect(currentNumberOfLevels).toBe(previousNumberOfLevels + 1);
+  })
 
 
 });
