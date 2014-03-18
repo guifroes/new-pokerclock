@@ -1,22 +1,25 @@
-'use strict'
 
-var newPokerclock = newPokerclock || {};
-newPokerclock.model = newPokerclock.model || {};
+angular.module('newPokerclock').factory('levels', [function (level) {
 
-var level = newPokerclock.model.Level;
+  var level = function(number, value, time) {
+    return {
+      number: number,
+      value: value,
+      time: time
+    }
+  };
 
-newPokerclock.model.LevelsSet = function () {
   var _levels = [
-    new level(1, 10, 900),
-    new level(2, 20, 900),
-    new level(3, 30, 900),
-    new level(4, 40, 900),
-    new level(5, 50, 900),
-    new level(6, 60, 900),
-    new level(7, 70, 900),
-    new level(8, 80, 900),
-    new level(9, 90, 900),
-    new level(10, 100, 900)];
+    level(1, 10, 900),
+    level(2, 20, 900),
+    level(3, 30, 900),
+    level(4, 40, 900),
+    level(5, 50, 900),
+    level(6, 60, 900),
+    level(7, 70, 900),
+    level(8, 80, 900),
+    level(9, 90, 900),
+    level(10, 100, 900)];
 
   return {
     levels: _levels,
@@ -33,4 +36,4 @@ newPokerclock.model.LevelsSet = function () {
       }
     }
   };
-};
+}]);

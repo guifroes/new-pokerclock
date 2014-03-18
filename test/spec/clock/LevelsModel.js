@@ -4,7 +4,11 @@ describe('LevelsModel', function () {
 
   var levelsSet = {};
   beforeEach(function () {
-    levelsSet = new newPokerclock.model.LevelsSet();
+    module('newPokerclock');
+
+    inject(function(_levels_, _level_) {
+      levelsSet = _levels_;
+    });
   });
 
   it('should have 10 levels by default', function () {

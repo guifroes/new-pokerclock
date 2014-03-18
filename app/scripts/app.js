@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('newPokerclockApp', [])
+angular.module('newPokerclock', [])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
