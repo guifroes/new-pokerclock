@@ -4,7 +4,7 @@ describe('LevelsModel', function () {
 
   var levelsSet = {};
   beforeEach(function () {
-    module('newPokerclock');
+    module('newPokerclock.factories');
 
     inject(function(_levels_) {
       levelsSet = _levels_;
