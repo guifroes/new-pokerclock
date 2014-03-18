@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('newPokerclock')
+angular.module('newPokerclock.controllers')
   .controller('MainCtrl', function ($scope, $timeout) {
     var startTimer = function(){
       return $timeout($scope.onTimeout, 1000);
