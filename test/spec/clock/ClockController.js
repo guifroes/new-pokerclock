@@ -1,17 +1,24 @@
-'use strict'
-
 describe('Clock Controller', function () {
 
   beforeEach(function () {
-    module('newPokerclock'),
     module('newPokerclock.controllers')
+
+    inject(function ($rootScope, $controller) {
+      scope = $rootScope.$new;
+      levels = { addLevel: function () {} };
+      ctrl = $controller('ClockController', { $scope: scope, levels: levels });
+    });
+
+    spyOn(levels, 'addLevel');
   });
 
   it('should have levels defined', inject(function ($controller) {
-    var scope = {},
-        ctrl = $controller('ClockController', { $scope: scope });
-
-   expect(scope.levels).toBeDefined;
+    expect(scope.levels).toBeDefined;
   }));
+
+  it('should add a level', function () {
+    scope.addLevel();
+    expect(levels.addLevel).toHaveBeenCalled();
+  });
 
 });
