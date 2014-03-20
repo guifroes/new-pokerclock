@@ -11,10 +11,12 @@
     <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
   </p>
   <ul>
-    <div ng-repeat='level in levels'>
-      <span>Level: {{level.number}}</span>
-      <span>Blinds: {{level.blinds}}</span>
-      <span>Ante: {{level.ante}}</span>
+    <div ng-controller='ClockController'>
+      <span>{{name}}</span>
+      <div ng-repeat='level in levels'>
+        <span>Level: {{level.number}}</span>
+        <span>Blinds: {{level.value}}</span>
+      </div>
     </div>
   </ul>
 </div>

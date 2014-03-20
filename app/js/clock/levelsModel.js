@@ -1,4 +1,4 @@
-angular.module('newPokerclock.factories').factory('levels', [function (level) {
+angular.module('newPokerclock.factories').factory('levels', [function () {
 
   var level = function(number, value, time) {
     return {
