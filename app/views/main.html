@@ -14,7 +14,8 @@
       <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
       <div ng-repeat='level in levels'>
         <span>Level: {{level.number}}</span>
-        <span>Blinds: {{level.value}}</span>
+        <span>Blinds:</span>
+        <input name='value' ng-model='level.value' required type='number'/>
         <button type='button' class='btn btn-small btn-primary' ng-click='removeLevel(level.number)'>Add level</button>
       </div>
     </div>
