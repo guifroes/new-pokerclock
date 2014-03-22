@@ -5,11 +5,13 @@ describe('Clock Controller', function () {
 
     inject(function ($rootScope, $controller) {
       scope = $rootScope.$new;
-      levels = { addLevel: function () {} };
+      levels = { 
+        addLevel: function () {},
+        removeLevel: function (number) {}
+      };
       ctrl = $controller('ClockController', { $scope: scope, levels: levels });
     });
 
-    spyOn(levels, 'addLevel');
   });
 
   it('should have levels defined', inject(function ($controller) {
@@ -17,8 +19,17 @@ describe('Clock Controller', function () {
   }));
 
   it('should add a level', function () {
+    spyOn(levels, 'addLevel');
     scope.addLevel();
     expect(levels.addLevel).toHaveBeenCalled();
+  });
+
+  it('should remove a level', function () {
+    spyOn(levels, 'removeLevel');
+
+    scope.removeLevel(5);
+
+    expect(levels.removeLevel).toHaveBeenCalledWith(5);
   });
 
 });

@@ -8,14 +8,14 @@
   <h3>Level {{currentLevel.number}} | Blinds {{currentLevel.blinds}} | Ante {{currentLevel.ante}}</h3>
   <p class='buttonBar'>
     <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>{{buttonCaption}}</button>
-    <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
   </p>
   <ul>
     <div ng-controller='ClockController'>
-      <span>{{name}}</span>
+      <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
       <div ng-repeat='level in levels'>
         <span>Level: {{level.number}}</span>
         <span>Blinds: {{level.value}}</span>
+        <button type='button' class='btn btn-small btn-primary' ng-click='removeLevel(level.number)'>Add level</button>
       </div>
     </div>
   </ul>

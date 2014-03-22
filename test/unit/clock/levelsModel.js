@@ -42,7 +42,18 @@ describe('LevelsModel', function () {
 
     levelsSet.addLevel();
 
-    expect(levelsSet.levels.length).toBe(previousNumberOfLevels + 1);
+    expect(levelsSet.levels.length).toEqual(previousNumberOfLevels + 1);
+  });
+
+  it('when adding a level, the new level has to have bigger number and value', function () {
+    var lastLevel = levelsSet.levels[levelsSet.levels.length - 1];
+
+    levelsSet.addLevel();
+
+    var newLevel = levelsSet.levels[levelsSet.levels.length - 1];
+
+    expect(newLevel.number).toBeGreaterThan(lastLevel.number);
+    expect(newLevel.value).toBeGreaterThan(lastLevel.value);
   });
 
   it('should remove a level', function () {
@@ -50,6 +61,6 @@ describe('LevelsModel', function () {
 
     levelsSet.removeLevel(5);
 
-    expect(levelsSet.levels.length).toBe(previousNumberOfLevels - 1);
+    expect(levelsSet.levels.length).toEqual(previousNumberOfLevels - 1);
   });
 });

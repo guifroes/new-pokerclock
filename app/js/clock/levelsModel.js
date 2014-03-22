@@ -24,7 +24,8 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
     levels: _levels,
 
     addLevel: function () {
-      _levels.push(new level(1, 10, 900));
+      var lastLevel = _levels[_levels.length - 1];
+      _levels.push(new level(lastLevel.number + 1, lastLevel.value * 2, 900));
     },
 
     removeLevel: function (number) {

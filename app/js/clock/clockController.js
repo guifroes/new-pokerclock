@@ -5,4 +5,8 @@ angular.module('newPokerclock.controllers').controller('ClockController', ['$sco
   $scope.addLevel = function () {
     levels.addLevel();
   };
+
+  $scope.removeLevel = function(number) {
+    levels.removeLevel(number);
+  };
 }]);
