@@ -91,6 +91,11 @@ module.exports = function(grunt) {
         configFile: './karma.conf.js',
         autoWatch: false,
         singleRun: true
+      },
+      unit_auto: {
+        configFile: './karma.conf.js',
+        autoWatch: true,
+        singleRun: false
       }
     }
 
@@ -104,6 +109,9 @@ module.exports = function(grunt) {
   //defaults
   grunt.registerTask('default', ['dev']);
 
+  //autotest and watch tests
+  grunt.registerTask('autotest', ['karma:unit_auto']);
+  //
   //development
   grunt.registerTask('dev', ['clean:server', 'compass:server', 'update',  'connect:devserver', 'open:devserver', 'watch:assets']);
 };
