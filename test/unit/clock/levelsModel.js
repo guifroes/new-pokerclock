@@ -3,6 +3,7 @@
 describe('LevelsModel', function () {
 
   var levelsSet = {};
+
   beforeEach(function () {
     module('newPokerclock.factories');
 
@@ -63,4 +64,11 @@ describe('LevelsModel', function () {
 
     expect(levelsSet.levels.length).toEqual(previousNumberOfLevels - 1);
   });
+
+  it('should have a clock', function () {
+    expect(levelsSet.clock).toBeDefined();
+    expect(levelsSet.clock.time).toEqual(22);
+  });
+
+
 });

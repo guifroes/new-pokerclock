@@ -1,8 +1,5 @@
-'use strict'
-var clock = {
-  name: "Guilherme",
-
-  addLevel: function () {
-    this.levels.push('level');
-  }
-};
+angular.module('newPokerclock.factories').factory('clock', [function () {
+  return {
+    time: 22
+  };
+}]);

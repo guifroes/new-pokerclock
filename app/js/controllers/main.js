@@ -1,3 +1,4 @@
+
 angular.module('newPokerclock.controllers')
   .controller('MainCtrl', function ($scope, $timeout) {
     var startTimer = function(){
