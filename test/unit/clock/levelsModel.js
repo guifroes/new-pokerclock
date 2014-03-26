@@ -67,7 +67,6 @@ describe('LevelsModel', function () {
 
   it('should have a clock', function () {
     expect(levelsSet.clock).toBeDefined();
-    expect(levelsSet.clock.time).toEqual(22);
   });
 
 
