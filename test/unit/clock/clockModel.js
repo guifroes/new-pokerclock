@@ -17,11 +17,11 @@ describe('ClockModel', function () {
   });
 
   it('should tick', function () {
-    var previousCount = clock.currentCount();
+    var previousCount = clock.currentCount;
 
     clock.tick();
 
-    var subsequentCount = clock.currentCount();
+    var subsequentCount = clock.currentCount;
 
     expect(subsequentCount).toEqual(previousCount - 1);
   });
