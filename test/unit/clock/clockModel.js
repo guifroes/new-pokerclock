@@ -1,7 +1,7 @@
 'use strict'
 
 describe('ClockModel', function () {
-
+ 
   var clock = {};
 
   beforeEach(function () {
@@ -17,12 +17,11 @@ describe('ClockModel', function () {
   });
 
   it('should tick', function () {
-    var previousCount = clock.currentCount;
-    console.log('previous: ' + previousCount);
+    var previousCount = clock.currentCount();
+
     clock.tick();
 
-    var subsequentCount = clock.currentCount;
-    console.log('subs: ' + subsequentCount);
+    var subsequentCount = clock.currentCount();
 
     expect(subsequentCount).toEqual(previousCount - 1);
   });
