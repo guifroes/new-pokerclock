@@ -1,7 +1,7 @@
 'use strict'
 
 describe('ClockModel', function () {
- 
+
   var clock = {};
   var $timeout = {};
 
@@ -12,6 +12,7 @@ describe('ClockModel', function () {
       clock = _clock_;
       $timeout = _$timeout_;
     })
+    clock.setTime(777);
   });
 
   it('should have a current time count', function() {

@@ -8,6 +8,7 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', function
     };
 
     return {
+      setTime: function (time) { _currentCount = time; },
       getCurrentCount: function () {
                       return _currentCount; 
                     },
