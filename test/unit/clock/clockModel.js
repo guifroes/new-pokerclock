@@ -29,4 +29,31 @@ describe('ClockModel', function () {
 
     expect(subsequentCount).toEqual(previousCount - 1);
   });
+
+  it('should tick only once when timer is stoped', function () {
+    var previousCount = clock.getCurrentCount();
+
+    clock.start();
+    clock.stop();
+    $timeout.flush();
+
+    var subsequentCount = clock.getCurrentCount();
+
+    expect(subsequentCount).toEqual(previousCount - 1);
+  });
+
+  it('should tick 3 times than stop', function () {
+    var previousCount = clock.getCurrentCount();
+
+    clock.start();
+    $timeout.flush();
+    $timeout.flush();
+    $timeout.flush();
+    clock.stop();
+
+    var subsequentCount = clock.getCurrentCount();
+
+    expect(subsequentCount).toEqual(previousCount - 3);
+
+  });
 });
