@@ -1,9 +1,20 @@
-angular.module('newPokerclock.factories').factory('clock', [function () {
-  var _currentCount = 900;
-  return {
-    currentCount: _currentCount,
-    tick: function () {
-      this.currentCount = this.currentCount - 1;
-    }
-  };
+angular.module('newPokerclock.factories').factory('clock', ['$timeout', function ($timeout) {
+  return (function () {
+    var _currentCount = 900;
+
+    var tick = function () {
+      _currentCount = _currentCount - 1;
+      console.log('COUNT: ' + _currentCount);
+    };
+
+    return {
+      getCurrentCount: function () {
+                      return _currentCount; 
+                    },
+
+      start: function () {
+        return $timeout(tick, 1000);
+      }
+    };
+  }());
 }]);
