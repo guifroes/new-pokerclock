@@ -36,6 +36,8 @@ angular.module('newPokerclock.factories').factory('levels', ['clock', function (
           _levels.splice(i, 1);
         }
       }
-    }
+    },
+
+    startClock: function () { clock.start(); }
   };
 }]);
