@@ -69,5 +69,12 @@ describe('LevelsModel', function () {
     expect(levelsSet.clock).toBeDefined();
   });
 
+  it('should have the first level as current when created', function () {
+    expect(levelsSet.currentLevel.number).toEqual(1);
+  });
+
+  it('the clock time should be the current level time', function () {
+    expect(levelsSet.clock.getCurrentCount()).toEqual(levelsSet.currentLevel.time);
+  });
 
 });

@@ -6,7 +6,6 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', function
     var tick = function () {
       _currentCount = _currentCount - 1;
       timeoutFunction = startClock();
-      console.log('COUNT: ' + _currentCount);
     };
 
     var startClock = function () {

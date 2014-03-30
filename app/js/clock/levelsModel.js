@@ -20,7 +20,9 @@ angular.module('newPokerclock.factories').factory('levels', ['clock', function (
     level(9, 90, 900),
     level(10, 100, 900)];
 
+  clock.setTime(_levels[0].time);
   return {
+    currentLevel: _levels[0],
     levels: _levels,
     clock: clock,
     addLevel: function () {
