@@ -1,4 +1,4 @@
-angular.module('newPokerclock.factories').factory('clock', ['$timeout', function ($timeout) {
+angular.module('newPokerclock.factories').factory('clock', ['$timeout', 'levels', function ($timeout, levels) {
   return (function () {
     var _currentCount = 900;
     var timeoutFunction;
@@ -13,6 +13,7 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', function
     };
 
     return {
+      levels: levels,
       setTime: function (time) { _currentCount = time; },
 
       getCurrentCount: function () {

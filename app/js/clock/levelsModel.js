@@ -1,4 +1,4 @@
-angular.module('newPokerclock.factories').factory('levels', ['clock', function (clock) {
+angular.module('newPokerclock.factories').factory('levels', [function () {
 
   var level = function(number, value, time) {
     return {
@@ -20,11 +20,9 @@ angular.module('newPokerclock.factories').factory('levels', ['clock', function (
     level(9, 90, 900),
     level(10, 100, 900)];
 
-  clock.setTime(_levels[0].time);
   return {
     currentLevel: _levels[0],
     levels: _levels,
-    clock: clock,
     addLevel: function () {
       var lastLevel = _levels[_levels.length - 1];
       _levels.push(new level(lastLevel.number + 1, lastLevel.value * 2, 900));
@@ -36,8 +34,6 @@ angular.module('newPokerclock.factories').factory('levels', ['clock', function (
           _levels.splice(i, 1);
         }
       }
-    },
-
-    startClock: function () { clock.start(); }
+    }
   };
 }]);

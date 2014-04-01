@@ -7,9 +7,8 @@ describe('LevelsModel', function () {
   beforeEach(function () {
     module('newPokerclock.factories');
 
-    inject(function(_levels_, _clock_) {
+    inject(function(_levels_) {
       levelsSet = _levels_;
-      levelsSet.clock = _clock_;
     });
   });
 
@@ -66,29 +65,9 @@ describe('LevelsModel', function () {
     expect(levelsSet.levels.length).toEqual(previousNumberOfLevels - 1);
   });
 
-  it('should have a clock', function () {
-    expect(levelsSet.clock).toBeDefined();
-  });
-
   it('should have the first level as current when created', function () {
     expect(levelsSet.currentLevel.number).toEqual(1);
   });
 
-  it('the clock time should be the current level time', function () {
-    expect(levelsSet.clock.getCurrentCount()).toEqual(levelsSet.currentLevel.time);
-  });
-
-  it('should start the clock', function () {
-    spyOn(levelsSet.clock, 'start');
-    levelsSet.startClock();
-
-    expect(levelsSet.clock.start).toHaveBeenCalled();
-  });
-
-  it('when a level time gets to zero, the next level should be the current', function () {
-    levelsSet.clock.setTime(1);
-
-    
-  });
 
 });

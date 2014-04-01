@@ -56,4 +56,5 @@ describe('ClockModel', function () {
     expect(subsequentCount).toEqual(previousCount - 3);
 
   });
+
 });
