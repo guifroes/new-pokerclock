@@ -22,7 +22,9 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
 
   return {
     currentLevel: _levels[0],
+
     levels: _levels,
+
     addLevel: function () {
       var lastLevel = _levels[_levels.length - 1];
       _levels.push(new level(lastLevel.number + 1, lastLevel.value * 2, 900));
@@ -34,6 +36,10 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
           _levels.splice(i, 1);
         }
       }
-    }
+    },
+
+    makeNextLevelCurrent: function () {
+      console.log('ME CHAMOU');
+    },
   };
 }]);

@@ -8,9 +8,10 @@ describe('ClockModel', function () {
   beforeEach(function () {
     module('newPokerclock.factories');
 
-    inject(function (_clock_, _$timeout_) {
+    inject(function (_clock_, _$timeout_, _levels_) {
       clock = _clock_;
       $timeout = _$timeout_;
+      levels = _levels_;
     })
     clock.setTime(777);
   });
@@ -57,4 +58,27 @@ describe('ClockModel', function () {
 
   });
 
+  it('should have levels', function () {
+    expect(clock.levels).toBeDefined();
+  });
+
+  it('should NOT make the next level current if count is not zero', function () {
+    spyOn(levels, 'makeNextLevelCurrent');
+
+    clock.setTime(1);
+    clock.start();
+    $timeout.flush();
+
+    expect(levels.makeNextLevelCurrent).not.toHaveBeenCalled();
+  });
+
+  it('should make the next level current after count reaches zero', function () {
+    spyOn(levels, 'makeNextLevelCurrent');
+
+    clock.setTime(0);
+    clock.start();
+    $timeout.flush();
+
+    expect(levels.makeNextLevelCurrent).toHaveBeenCalled();
+  });
 });
