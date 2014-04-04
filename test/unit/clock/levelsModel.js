@@ -69,5 +69,13 @@ describe('LevelsModel', function () {
     expect(levelsSet.currentLevel.number).toEqual(1);
   });
 
+  it('should make next level current', function () {
+    var previousLevelNumber = levelsSet.currentLevel.number;
+
+    levelsSet.makeNextLevelCurrent();
+
+    expect(levelsSet.currentLevel.number).toEqual(previousLevelNumber + 1);
+  });
+
 
 });

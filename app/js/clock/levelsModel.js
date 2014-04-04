@@ -39,7 +39,8 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
     },
 
     makeNextLevelCurrent: function () {
-      console.log('ME CHAMOU');
+      var currentLevelIndex = this.levels.indexOf(this.currentLevel);
+      this.currentLevel = this.levels[currentLevelIndex + 1];
     },
   };
 }]);
