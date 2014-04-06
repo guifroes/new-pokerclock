@@ -8,6 +8,7 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', 'levels'
 
       if(_currentCount < 0) {
         levels.makeNextLevelCurrent();
+        _currentCount = levels.currentLevel.time;
       }
 
       timeoutFunction = startClock();

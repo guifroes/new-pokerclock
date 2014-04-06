@@ -81,4 +81,13 @@ describe('ClockModel', function () {
 
     expect(levels.makeNextLevelCurrent).toHaveBeenCalled();
   });
+
+  it('should have the next level time as count when change levels', function () {
+    clock.setTime(0);
+    clock.start();
+    $timeout.flush();
+
+    var currentLevelTime = levels.currentLevel.time;
+    expect(clock.getCurrentCount()).toEqual(currentLevelTime);
+  });
 });
