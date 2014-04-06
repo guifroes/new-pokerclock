@@ -25,4 +25,20 @@ describe('Timer model', function () {
     expect(timer.clock.start).toHaveBeenCalled();
   });
 
+  it('should pause the game', function () {
+    spyOn(timer.clock, 'stop');
+    timer.pauseGame();
+    expect(timer.clock.stop).toHaveBeenCalled();
+  });
+
+  it('should reset the game', function () {
+    spyOn(timer.levels, 'reset');
+    spyOn(timer.clock, 'reset');
+
+    timer.resetGame();
+
+    expect(timer.levels.reset).toHaveBeenCalled();
+    expect(timer.clock.reset).toHaveBeenCalled();
+  });
+
 });

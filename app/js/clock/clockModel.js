@@ -30,6 +30,10 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', 'levels'
 
       stop: function () {
         $timeout.cancel(timeoutFunction);
+      },
+
+      reset: function () {
+        _currentCount = this.levels.currentLevel.time;
       }
 
     };

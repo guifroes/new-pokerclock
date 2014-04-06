@@ -42,5 +42,9 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
       var currentLevelIndex = this.levels.indexOf(this.currentLevel);
       this.currentLevel = this.levels[currentLevelIndex + 1];
     },
+
+    reset: function () {
+      this.currentLevel = _levels[0];
+    }
   };
 }]);

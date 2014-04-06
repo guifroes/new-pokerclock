@@ -5,6 +5,16 @@ angular.module('newPokerclock.factories').factory('timer', ['levels', 'clock', f
     clock: clock,
 
     startGame: function () {
+      this.clock.start();
+    },
+
+    pauseGame: function () {
+      this.clock.stop();
+    },
+
+    resetGame: function () {
+      this.levels.reset();
+      this.clock.reset();
     }
   };
 }]);

@@ -90,4 +90,10 @@ describe('ClockModel', function () {
     var currentLevelTime = levels.currentLevel.time;
     expect(clock.getCurrentCount()).toEqual(currentLevelTime);
   });
+
+  it('should set current count to current level time when reset', function () {
+    var currentLevelTime = levels.currentLevel.time;
+    clock.reset();
+    expect(clock.getCurrentCount()).toEqual(currentLevelTime);
+  });
 });
