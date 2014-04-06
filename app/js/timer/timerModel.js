@@ -29,6 +29,14 @@ angular.module('newPokerclock.factories').factory('timer', ['levels', 'clock', f
     rewind: function () {
       this.levels.makePreviousLevelCurrent();
       this.clock.reset();
+    },
+
+    addLevel: function () {
+      this.levels.addLevel();
+    },
+
+    removeLevel: function (levelNumber) {
+      this.levels.removeLevel(levelNumber);
     }
   };
 }]);

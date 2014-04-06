@@ -41,6 +41,22 @@ describe('Timer model', function () {
     expect(timer.clock.reset).toHaveBeenCalled();
   });
 
+  it('should add a level', function () {
+    spyOn(timer.levels, 'addLevel');
+
+    timer.addLevel();
+
+    expect(timer.levels.addLevel).toHaveBeenCalled();
+  });
+
+  it('should remove a level', function () {
+    spyOn(timer.levels, 'removeLevel');
+
+    timer.removeLevel(5);
+
+    expect(timer.levels.removeLevel).toHaveBeenCalledWith(5);
+  });
+
   it('should fast forward level', function () {
     spyOn(timer.levels, 'makeNextLevelCurrent');
     spyOn(timer.clock, 'reset');
