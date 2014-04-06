@@ -77,6 +77,15 @@ describe('LevelsModel', function () {
     expect(levelsSet.currentLevel.number).toEqual(previousLevelNumber + 1);
   });
 
+  it('should make previous level current', function () {
+    levelsSet.makeNextLevelCurrent();
+    var previousLevelNumber = levelsSet.currentLevel.number;
+
+    levelsSet.makePreviousLevelCurrent();
+
+    expect(levelsSet.currentLevel.number).toEqual(previousLevelNumber - 1);
+  });
+
   it('should set current level to the first when reset', function () {
     levelsSet.reset();
     expect(levelsSet.currentLevel.number).toEqual(1);

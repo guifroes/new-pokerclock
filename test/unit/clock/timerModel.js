@@ -41,4 +41,32 @@ describe('Timer model', function () {
     expect(timer.clock.reset).toHaveBeenCalled();
   });
 
+  it('should fast forward level', function () {
+    spyOn(timer.levels, 'makeNextLevelCurrent');
+    spyOn(timer.clock, 'reset');
+
+    timer.fastForward();
+
+    expect(timer.levels.makeNextLevelCurrent).toHaveBeenCalled();
+    expect(timer.clock.reset).toHaveBeenCalled();
+  });
+
+  it('should reset level', function () {
+    spyOn(timer.clock, 'reset');
+
+    timer.resetLevel();
+
+    expect(timer.clock.reset).toHaveBeenCalled();
+  });
+
+  it('should rewind level', function () {
+    spyOn(timer.levels, 'makePreviousLevelCurrent');
+    spyOn(timer.clock, 'reset');
+
+    timer.rewind();
+
+    expect(timer.levels.makePreviousLevelCurrent).toHaveBeenCalled();
+    expect(timer.clock.reset).toHaveBeenCalled();
+  });
+
 });
