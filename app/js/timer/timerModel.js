@@ -1,42 +1,48 @@
 angular.module('newPokerclock.factories').factory('timer', ['levels', 'clock', function (levels, clock) {
   return {
-    levels: levels,
 
-    clock: clock,
+    levels: levels.levels,
+
+    currentLevel: levels.currentLevel,
+
+    currentCount: clock.getCurrentCount,
+
 
     startGame: function () {
-      this.clock.start();
+      console.log('start');
+      clock.start();
     },
 
     pauseGame: function () {
-      this.clock.stop();
+      clock.stop();
     },
 
     resetGame: function () {
-      this.levels.reset();
-      this.clock.reset();
+      levels.reset();
+      clock.reset();
     },
 
     fastForward: function () {
-      this.levels.makeNextLevelCurrent();
-      this.clock.reset();
+      levels.makeNextLevelCurrent();
+      clock.reset();
     },
 
     resetLevel: function () {
-      this.clock.reset();
+      clock.reset();
     },
 
     rewind: function () {
-      this.levels.makePreviousLevelCurrent();
-      this.clock.reset();
+      levels.makePreviousLevelCurrent();
+      clock.reset();
     },
 
     addLevel: function () {
-      this.levels.addLevel();
+      levels.addLevel();
     },
 
     removeLevel: function (levelNumber) {
-      this.levels.removeLevel(levelNumber);
-    }
+      levels.removeLevel(levelNumber);
+    },
+
   };
 }]);

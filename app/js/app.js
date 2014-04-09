@@ -5,7 +5,7 @@ angular.module('newPokerclock', ['newPokerclock.controllers', 'newPokerclock.fac
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'TimerController'
       })
       .otherwise({
         redirectTo: '/'

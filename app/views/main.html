@@ -1,23 +1,22 @@
-<div class="hero-unit">
+<div class="hero-unit" ng-controller='TimerController'>
   <div class='gameName'>
     <h1>{{gameName}}</h1>
   </div>
   <p class='time'>
-    <span>{{time | date: 'mm:ss' }}</span>
+    <span>{{timer.currentCount()}}</span>
   </p>
-  <h3>Level {{currentLevel.number}} | Blinds {{currentLevel.blinds}} | Ante {{currentLevel.ante}}</h3>
+  <h3>Level {{timer.currentLevel().number}} | Blinds {{timer.currentLevel.value}}</h3>
   <p class='buttonBar'>
-    <button type='button' class='btn btn-large btn-primary' ng-click='stop()'>{{buttonCaption}}</button>
+    <button type='button' class='btn btn-large btn-primary' ng-click='timer.startGame()'>Start</button>
+    <button type='button' class='btn btn-large btn-primary' ng-click='timer.pauseGame()'>Pause</button>
   </p>
   <ul>
-    <div ng-controller='ClockController'>
-      <button type='button' class='btn btn-large btn-primary' ng-click='addLevel()'>Add level</button>
-      <div ng-repeat='level in levels'>
-        <span>Level: {{level.number}}</span>
-        <span>Blinds:</span>
-        <input name='value' ng-model='level.value' required type='number'/>
-        <button type='button' class='btn btn-small btn-primary' ng-click='removeLevel(level.number)'>Add level</button>
-      </div>
+    <button type='button' class='btn btn-large btn-primary' ng-click='timer.addLevel()'>Add level</button>
+    <div ng-repeat='level in timer.levels'>
+      <span>Level: {{level.number}}</span>
+      <span>Blinds:</span>
+      <input name='value' ng-model='level.value' required type='number'/>
+      <button type='button' class='btn btn-small btn-primary' ng-click='timer.removeLevel(level.number)'>Add level</button>
     </div>
   </ul>
 </div>

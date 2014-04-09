@@ -85,4 +85,15 @@ describe('Timer model', function () {
     expect(timer.clock.reset).toHaveBeenCalled();
   });
 
+  it('should expose the current level', function () {
+    expect(timer.currentLevel).toBeDefined();
+  });
+
+  it('should expose the levels', function () {
+    expect(timer.levels).toBeDefined();
+  });
+  
+  it('should expose clocks current count', function () {
+    expect(timer.currentCount).toBeDefined();
+  });
 });

@@ -9,8 +9,8 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
   };
 
   var _levels = [
-    level(1, 10, 900),
-    level(2, 20, 900),
+    level(1, 10, 20),
+    level(2, 20, 20),
     level(3, 30, 900),
     level(4, 40, 900),
     level(5, 50, 900),

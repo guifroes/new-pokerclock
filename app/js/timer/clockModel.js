@@ -1,6 +1,6 @@
 angular.module('newPokerclock.factories').factory('clock', ['$timeout', 'levels', function ($timeout, levels) {
   return (function () {
-    var _currentCount = 900;
+    var _currentCount = levels.currentLevel.time;
     var timeoutFunction;
 
     var tick = function () {
@@ -9,6 +9,7 @@ angular.module('newPokerclock.factories').factory('clock', ['$timeout', 'levels'
       if(_currentCount < 0) {
         levels.makeNextLevelCurrent();
         _currentCount = levels.currentLevel.time;
+        console.log("mudou pra level", levels.currentLevel.number);
       }
 
       timeoutFunction = startClock();
