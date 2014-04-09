@@ -3,9 +3,9 @@ angular.module('newPokerclock.factories').factory('timer', ['levels', 'clock', f
 
     levels: levels.levels,
 
-    currentLevel: levels.getCurrentLevel,
+    getCurrentLevel: levels.getCurrentLevel,
 
-    currentCount: clock.getCurrentCount,
+    getCurrentCount: clock.getCurrentCount,
 
 
     startGame: function () {

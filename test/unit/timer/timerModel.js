@@ -86,7 +86,7 @@ describe('Timer model', function () {
   });
 
   it('should expose the current level', function () {
-    expect(timer.currentLevel).toBeDefined();
+    expect(timer.getCurrentLevel).toBeDefined();
   });
 
   it('should expose the levels', function () {
@@ -94,6 +94,6 @@ describe('Timer model', function () {
   });
   
   it('should expose clocks current count', function () {
-    expect(timer.currentCount).toBeDefined();
+    expect(timer.getCurrentCount).toBeDefined();
   });
 });

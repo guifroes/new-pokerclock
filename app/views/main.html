@@ -3,9 +3,9 @@
     <h1>{{gameName}}</h1>
   </div>
   <p class='time'>
-    <span>{{timer.currentCount()}}</span>
+    <span>{{timer.getCurrentCount()}}</span>
   </p>
-  <h3>Level {{timer.currentLevel().number}} | Blinds {{timer.currentLevel.value}}</h3>
+  <h3>Level {{timer.getCurrentLevel().number}} | Blinds {{timer.getCurrentLevel().value}}</h3>
   <p class='buttonBar'>
     <button type='button' class='btn btn-large btn-primary' ng-click='timer.startGame()'>Start</button>
     <button type='button' class='btn btn-large btn-primary' ng-click='timer.pauseGame()'>Pause</button>
