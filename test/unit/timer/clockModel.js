@@ -85,12 +85,12 @@ describe('ClockModel', function () {
     clock.start();
     $timeout.flush();
 
-    var currentLevelTime = levels.currentLevel.time;
+    var currentLevelTime = levels.getCurrentLevel().time;
     expect(clock.getCurrentCount()).toEqual(currentLevelTime);
   });
 
   it('should set current count to current level time when reset', function () {
-    var currentLevelTime = levels.currentLevel.time;
+    var currentLevelTime = levels.getCurrentLevel().time;
     clock.reset();
     expect(clock.getCurrentCount()).toEqual(currentLevelTime);
   });

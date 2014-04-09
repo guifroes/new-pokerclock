@@ -66,29 +66,29 @@ describe('LevelsModel', function () {
   });
 
   it('should have the first level as current when created', function () {
-    expect(levelsSet.currentLevel.number).toEqual(1);
+    expect(levelsSet.getCurrentLevel().number).toEqual(1);
   });
 
   it('should make next level current', function () {
-    var previousLevelNumber = levelsSet.currentLevel.number;
+    var previousLevelNumber = levelsSet.getCurrentLevel().number;
 
     levelsSet.makeNextLevelCurrent();
 
-    expect(levelsSet.currentLevel.number).toEqual(previousLevelNumber + 1);
+    expect(levelsSet.getCurrentLevel().number).toEqual(previousLevelNumber + 1);
   });
 
   it('should make previous level current', function () {
     levelsSet.makeNextLevelCurrent();
-    var previousLevelNumber = levelsSet.currentLevel.number;
+    var previousLevelNumber = levelsSet.getCurrentLevel().number;
 
     levelsSet.makePreviousLevelCurrent();
 
-    expect(levelsSet.currentLevel.number).toEqual(previousLevelNumber - 1);
+    expect(levelsSet.getCurrentLevel().number).toEqual(previousLevelNumber - 1);
   });
 
   it('should set current level to the first when reset', function () {
     levelsSet.reset();
-    expect(levelsSet.currentLevel.number).toEqual(1);
+    expect(levelsSet.getCurrentLevel().number).toEqual(1);
   });
 
 });

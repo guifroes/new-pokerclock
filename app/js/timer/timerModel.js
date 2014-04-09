@@ -3,7 +3,7 @@ angular.module('newPokerclock.factories').factory('timer', ['levels', 'clock', f
 
     levels: levels.levels,
 
-    currentLevel: levels.currentLevel,
+    currentLevel: levels.getCurrentLevel,
 
     currentCount: clock.getCurrentCount,
 

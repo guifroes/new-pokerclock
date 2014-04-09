@@ -20,8 +20,12 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
     level(9, 90, 900),
     level(10, 100, 900)];
 
+  var _currentLevel = _levels[0];
+
   return {
-    currentLevel: _levels[0],
+    getCurrentLevel: function () {
+                    return _currentLevel;
+                  },
 
     levels: _levels,
 
@@ -39,13 +43,13 @@ angular.module('newPokerclock.factories').factory('levels', [function () {
     },
 
     makeNextLevelCurrent: function () {
-      var currentLevelIndex = this.levels.indexOf(this.currentLevel);
-      this.currentLevel = this.levels[currentLevelIndex + 1];
+      var currentLevelIndex = this.levels.indexOf(_currentLevel);
+      _currentLevel = this.levels[currentLevelIndex + 1];
     },
 
     makePreviousLevelCurrent: function () {
-      var currentLevelIndex = this.levels.indexOf(this.currentLevel);
-      this.currentLevel = this.levels[currentLevelIndex - 1];
+      var currentLevelIndex = this.levels.indexOf(_currentLevel);
+      _currentLevel = this.levels[currentLevelIndex - 1];
     },
 
     reset: function () {

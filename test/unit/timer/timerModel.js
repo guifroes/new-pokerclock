@@ -16,7 +16,7 @@ describe('Timer model', function () {
 
   it('should have first level as current when game starts', function () {
     timer.startGame();
-    expect(timer.levels.currentLevel.number).toEqual(1);
+    expect(timer.levels.getCurrentLevel().number).toEqual(1);
   });
 
   it('should start the clock when start game', function () {
