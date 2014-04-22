@@ -21,6 +21,8 @@ describe('Timer display directive', function() {
 
   });
   it('should display count as minutes and seconds', function () {
-    expect(true).toBe(true);
+    scope.count = 15;
+
+    expect(elem.text()).toBe('00:15');
   });
 });
